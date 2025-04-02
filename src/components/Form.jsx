@@ -1,23 +1,48 @@
-import '../App.css'
-export const Form = () => {
+import { useContext, useRef } from 'react'
+import { PageData } from '../store/function';
 
-    return (<>
-        <div class="container flex flex-col w-90 gap-y-2 p-4 mt-5 shadow-md rounded h-53 sm:mx-auto bg-white">
+export const Form = ({ type }) => {
+    const { addItem } = useContext(PageData);
+
+    const title = useRef();
+    const amount = useRef();
+    const description = useRef();
+
+    const handleSubmit = () => {
+        // console.log("hrer");
+        // const title = ;
+        // const amount = ;
+        // const description = ;
+
+        addItem(
+            title.current.value,
+            amount.current.value,
+            description.current.value,
+            type)
+
+        title.current.value = "";
+        amount.current.value = "";
+        description.current.value = "";
+    }
+
+    return (
+        <div className="container flex flex-col max-w-88 gap-y-2 p-4 mt-5 shadow-md rounded h-53 sm:mx-auto xs:mx-10 bg-white">
             {/* <div>{ enter form head }</div> */}
-            <div className='flex w-80 gap-2 '>
-                <label class="floating-label">
+            <div className='flex max-w-80 gap-2 '>
+                <label className="floating-label">
                     <span>Title</span>
-                    <input type="text" placeholder="Title" class="input input-md" />
+                    <input type="text" placeholder="Title" className="input input-md" ref={title} />
                 </label>
-                <label class="floating-label">
+                <label className="floating-label">
                     <span>Amount</span>
-                    <input type="text" placeholder="Amount" class="input input-md" />
+                    <input type="text" placeholder="Amount" className="input input-md" ref={amount} />
                 </label>
             </div>
-            <label class="floating-label ">
+            <label className="floating-label ">
                 <span>Description</span>
-                <textarea className="textarea" placeholder="Description"></textarea>
+                <textarea className="textarea" placeholder="Description" ref={description}></textarea>
             </label>
-            <button className="btn btn-active btn-success text-white w-80">Add To List</button>        </div>
-    </>)
+            <button className="btn btn-active active:bg-green-300 btn-success text-white" onClick={() => handleSubmit()}>Add To List</button>
+        </div>
+    )
 }

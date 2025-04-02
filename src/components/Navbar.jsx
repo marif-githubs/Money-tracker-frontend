@@ -2,11 +2,16 @@ import "../App.css"
 
 export const Navbar = () => {
 
+  const handleLogout = () => {
+    localStorage.setItem('jwt_token', 'null');
+    window.location.href = "/auth/login"
+  }
+
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm px-8">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Money Tracker</a>
+          <a className="select-none text-xl">Money Tracker</a>
         </div>
         <div className="flex gap-2">
           {/* <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" /> */}
@@ -18,7 +23,7 @@ export const Navbar = () => {
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
           </div>
-          <button className="btn btn-soft btn-primary">Log out</button>
+          <button className="btn btn-soft btn-primary" onClick={() => handleLogout()}> Log out</button>
 
           {/* <ul
               tabIndex={0}

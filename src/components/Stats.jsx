@@ -1,9 +1,8 @@
-import '../App.css'
 import { PiHandDepositBold } from "react-icons/pi";
 import { PiHandWithdrawBold } from "react-icons/pi";
 import { BiMoneyWithdraw } from "react-icons/bi";
 
-export const Dashboard = () => {
+export const Stats = () => {
 
     return (
         <>
