@@ -9,10 +9,6 @@ export const Form = ({ type }) => {
     const description = useRef();
 
     const handleSubmit = () => {
-        // console.log("hrer");
-        // const title = ;
-        // const amount = ;
-        // const description = ;
 
         addItem(
             title.current.value,
@@ -35,7 +31,7 @@ export const Form = ({ type }) => {
                 </label>
                 <label className="floating-label">
                     <span>Amount</span>
-                    <input type="text" placeholder="Amount" className="input input-md" ref={amount} />
+                    <input type="number" placeholder="Amount" className="input input-md" ref={amount} />
                 </label>
             </div>
             <label className="floating-label ">

@@ -1,37 +1,47 @@
 import { useNavigate } from "react-router-dom";
 import api from "../store/axios"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import axios from "axios";
 
 export const Register = () => {
 
+    const [message, setMessage] = useState("");
     const username = useRef();
     const email = useRef();
     const password = useRef();
     const cpassword = useRef();
     const navigate = useNavigate();
 
-    const handleSignup = () => {
+    const handleSignup = async () => {
+        try {
+            const response = await axios.post("http://localhost:5000/userAuth/register", {
+                username: username.current.value,
+                email: email.current.value,
+                password: password.current.value,
+            })
 
-        axios.post("http://localhost:8080/userAuth/register", {
-            username: username.current.value,
-            email: email.current.value,
-            password: password.current.value,
-        }).then(response => console.log(response.data))
-            .catch(err => console.log(err));
+            if (response.data.status === 'Success') {
+                navigate("/auth/login")
+            } else {
+                setMessage(response.data.Message);
+            }
+
+        } catch (err) {
+            console.log(err);
+        }
 
         username.current.value = "";
         email.current.value = "";
         password.current.value = "";
         cpassword.current.value = "";
-        console.log("register");
-        navigate("/auth/login")
+
     }
 
     return (
         <>
             {/* // <div className="flex flex-col w-80 gap-3 m-auto sm:mt-20   "> */}
             <div className="text-center font-bold text-xl">Register</div>
+            <div>{message}</div>
             <label className="input validator">
                 <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></g></svg>
                 <input type="input" required placeholder="Username" pattern="[A-Za-z][A-Za-z0-9\-]*" minLength="3" maxLength="30" title="Only letters, numbers or dash" ref={username} />

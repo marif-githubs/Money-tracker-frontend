@@ -7,7 +7,6 @@ import { PageData } from "../store/function.jsx"
 export const Expenditure = () => {
     const { expList, loading } = useContext(PageData);
 
-    // console.log(expList);
     return (<>
         <div className="flex flex-col-reverse md:flex-row" >
 

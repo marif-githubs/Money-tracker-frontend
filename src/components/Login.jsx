@@ -1,38 +1,34 @@
-import { useRef } from "react"
-import api from "../store/axios"
+import { useRef, useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-
+    const [message, setMessage] = useState("");
     const username = useRef();
     const password = useRef();
     const navigate = useNavigate();
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
 
-        axios.post("http://localhost:8080/userAuth/login", /*{ withCredentials: true },*/ {
+        const response = await axios.post("http://localhost:5000/userAuth/login", /*{ withCredentials: true },*/ {
             username: username.current.value,
             password: password.current.value,
-        }).then(response => {
-            console.log(response.data);
-            if (response.data.status === 'Success') {
-                localStorage.setItem('jwt_token', response.data.token);
-                // navigate("/home/dashboard")
-                window.location.href = "/home/dashboard";
-            }
+        });
 
-        })
-            .catch(err => console.log(err));
-        // cors issue
-        // cookie cant be save
+        if (response.data.status === 'Success') {
+            localStorage.setItem('jwt_token', response.data.token);
+            window.location.href = "/home/dashboard";
+        } else {
+            setMessage(response.data.Message);
+        }
+
         username.current.value = "";
         password.current.value = "";
-        console.log("login");
     }
 
     return (<>
         <div className="text-center font-bold text-xl">Login</div>
+        <div>{message}</div>
         <label className="input validator">
             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></g></svg>
             <input type="input" required placeholder="Username" pattern="[A-Za-z][A-Za-z0-9\-]*" minLength="3" maxLength="30" title="Only letters, numbers or dash" ref={username} />
