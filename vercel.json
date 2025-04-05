@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "routes": [
     {
       "source": "/",
-      "destination": "/auth/login",
-      "permanent": true
+      "destination": "/auth/login"
     }
   ]
 }

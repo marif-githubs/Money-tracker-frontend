@@ -70,7 +70,7 @@ const PageDataProvider = ({ children }) => {
         setLoading(true);
         const controller = new AbortController();
 
-        api.get("http://localhost:5000/transaction/entries", { signal: controller.signal })
+        api.get("http://money-tracker-backend-8trv.onrender.com/transaction/entries", { signal: controller.signal })
             .then(response => {
                 dispatch({
                     type: "INITIAL_ITEMS",
@@ -87,7 +87,7 @@ const PageDataProvider = ({ children }) => {
 
     const addItem = async (title, amount, description, type) => {
         try {
-            const response = await api.post("http://localhost:5000/transaction/entry", {
+            const response = await api.post("http://money-tracker-backend-8trv.onrender.com/transaction/entry", {
                 title,
                 amount,
                 description,
@@ -107,7 +107,7 @@ const PageDataProvider = ({ children }) => {
 
     const deleteItem = async (id, type) => {
         try {
-            await api.delete(`http://localhost:5000/transaction/entry/${id}`);
+            await api.delete(`http://money-tracker-backend-8trv.onrender.com/transaction/entry/${id}`);
             dispatch({
                 type: "DELETE_ITEM",
                 payload: { id, type }
