@@ -10,7 +10,7 @@ export const Login = () => {
 
     const handleLogin = async () => {
 
-        const response = await axios.post("http://money-tracker-backend-8trv.onrender.com/userAuth/login", /*{ withCredentials: true },*/ {
+        const response = await axios.post("https://money-tracker-backend-8trv.onrender.com/userAuth/login", /*{ withCredentials: true },*/ {
             username: username.current.value,
             password: password.current.value,
         });
