@@ -1,8 +1,8 @@
 {
   "routes": [
     {
-      "source": "/",
-      "destination": "/auth/login"
+      "src": "/",
+      "dest": "/auth/login"
     }
   ]
 }
