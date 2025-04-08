@@ -14,7 +14,7 @@ export const Incomes = () => {
 
                 <ul className="list bg-base-100 ">
 
-                    <p className="p-4 pb-2 text-sm opacity-60 tracking-wide">Incomes</p>
+                    <p className="p-4 pb-2 text-sm opacity-60 tracking-wide text-lg text-center">Incomes</p>
 
                     {loading ? <Loading /> : incList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"income"}></List>)}
 
