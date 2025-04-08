@@ -10,7 +10,7 @@ export const Assets = () => {
     return (<>
         <div className="flex flex-col-reverse md:flex-row" >
 
-            <div className='rounded-box shadow-md m-4 min-w-100 lg:w-120'>
+            <div className='rounded-box shadow-md m-4 md:min-w-100 lg:w-120'>
 
                 <ul className="list bg-base-100 ">
 
