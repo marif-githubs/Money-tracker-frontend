@@ -17,7 +17,7 @@ export const Stats = () => {
 
 
     return (
-        <div className="stats shadow h-50 mx-auto my-10 bg-white :w-auto">
+        <div className="stats shadow h-50 mx-auto my-10 bg-white w-auto">
             <div className="stat">
                 <div className="stat-figure text-secondary">
                     <PiHandWithdrawBold className="inline-block h-8 w-8 stroke-current" />
