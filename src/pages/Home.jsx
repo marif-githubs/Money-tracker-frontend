@@ -1,9 +1,9 @@
 import "../App.css"
 import { Navbar } from '../components/Navbar.jsx'
 import { Sidedrawer } from '../components/Sidedrawer.jsx'
-import { Contantpage } from "./Contantpage.jsx"
+import { Outlet } from "react-router-dom"
+import PageDataProvider from "../store/function.jsx"
 import { Footer } from "../components/Footer.jsx"
-import { Register } from "../components/Register.jsx"
 
 export const Home = () => {
 
@@ -12,10 +12,11 @@ export const Home = () => {
             <Navbar></Navbar>
             <div className="flex flex-col md:flex-row">
                 <Sidedrawer></Sidedrawer>
-                <Contantpage></Contantpage>
+                <PageDataProvider>
+                    <Outlet />
+                </PageDataProvider>
             </div>
             <Footer></Footer>
-            {/* <Register></Register> */}
         </div>
     )
 }
