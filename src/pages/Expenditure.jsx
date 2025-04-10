@@ -17,7 +17,7 @@ export const Expenditure = () => {
 
                     <p className="p-4 pb-2 text-lg text-center tracking-wide">Expenditures</p>
 
-                    {loading ? <Loading /> : expList === null ? <Message /> : expList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"expense"}></List>)}
+                    {loading ? <Loading /> : expList.length === 0 ? <Message/> : expList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"expense"}></List>)}
 
                 </ul>
             </div>
