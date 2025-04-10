@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import axios from "axios";
+import api from "../store/axios";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
@@ -10,7 +10,7 @@ export const Login = () => {
 
     const handleLogin = async () => {
 
-        const response = await axios.post("https://money-tracker-backend-8trv.onrender.com/userAuth/login", /*{ withCredentials: true },*/ {
+        const response = await api.post("userAuth/login", {
             username: username.current.value,
             password: password.current.value,
         });

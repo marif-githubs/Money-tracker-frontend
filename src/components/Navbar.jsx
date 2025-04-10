@@ -1,6 +1,9 @@
 import "../App.css"
+import { useState } from "react"
 
 export const Navbar = () => {
+
+  const [username, setUsername] = useState('')
 
   const handleLogout = () => {
     localStorage.setItem('jwt_token', 'null');
@@ -14,30 +17,9 @@ export const Navbar = () => {
           <a className="select-none text-xl">Money Tracker</a>
         </div>
         <div className="flex gap-2">
-          {/* <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" /> */}
-          {/* <div className="dropdown dropdown-end"> */}
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full border-4 border-double">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-            </div>
-          </div>
+          <div className="hidden md:inline">{username}</div>
           <button className="btn btn-soft btn-primary" onClick={() => handleLogout()}> Log out</button>
 
-          {/* <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li><a>Settings</a></li>
-              <li><a>Logout</a></li>
-            </ul> */}
-          {/* </div> */}
         </div>
       </div>
     </>

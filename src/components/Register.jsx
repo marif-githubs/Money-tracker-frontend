@@ -14,7 +14,7 @@ export const Register = () => {
 
     const handleSignup = async () => {
         try {
-            const response = await axios.post("https://money-tracker-backend-8trv.onrender.com/userAuth/register", {
+            const response = await api.post("userAuth/register", {
                 username: username.current.value,
                 email: email.current.value,
                 password: password.current.value,
