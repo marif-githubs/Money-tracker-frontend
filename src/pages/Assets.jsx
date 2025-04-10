@@ -17,7 +17,7 @@ export const Assets = () => {
 
                     <p className="p-4 pb-2 text-lg text-center tracking-wide">Assets</p>
 
-                    {loading ? <Loading /> : assList === null ? <Message /> : assList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"asset"}></List>)}
+                    {loading ? <Loading /> : assList.length === 0 ? <Message /> : assList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"asset"}></List>)}
 
                 </ul>
 
