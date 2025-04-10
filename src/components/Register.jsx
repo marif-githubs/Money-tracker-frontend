@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import api from "../store/axios"
 import { useRef, useState } from "react"
 import axios from "axios";
