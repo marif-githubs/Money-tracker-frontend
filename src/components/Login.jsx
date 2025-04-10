@@ -27,6 +27,7 @@ export const Login = () => {
     }
 
     return (<>
+                <div className="flex flex-col w-80 gap-3 m-auto my-20">
         <div className="text-center font-bold text-xl">Login</div>
         <div>{message}</div>
         <label className="input validator">
@@ -48,6 +49,10 @@ export const Login = () => {
             <br />At least one uppercase letter
         </p>
         <button className="btn btn-primary" onClick={() => handleLogin()}>Submit</button>
+           
+                <Link to="/auth/register" className="float-left btn btn-soft btn-primary w-45%">Signup</Link>
+            </div>
+</div>
     </>
     )
 }
