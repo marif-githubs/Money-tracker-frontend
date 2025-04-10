@@ -37,8 +37,8 @@ export const Navbar = () => {
               <li><a>Settings</a></li>
               <li><a>Logout</a></li>
             </ul> */}
-          {/* </div> */}
-        </div>
+          {/* </div> 
+        </div>*/}
       </div>
     </>
   )
