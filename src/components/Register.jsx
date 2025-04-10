@@ -39,7 +39,7 @@ export const Register = () => {
 
     return (
         <>
-            {/* // <div className="flex flex-col w-80 gap-3 m-auto sm:mt-20   "> */}
+                    <div className="flex flex-col w-80 gap-3 m-auto my-20">
             <div className="text-center font-bold text-xl">Register</div>
             <div>{message}</div>
             <label className="input validator">
@@ -75,7 +75,11 @@ export const Register = () => {
                 <br />At least one lowercase letter
                 <br />At least one uppercase letter
             </p>
-            <button className="btn btn-primary" onClick={() => handleSignup()}>Submit</button>
+            <button className="btn btn-primary" onClick={() => handleSignup()}>Submit</button>            
+                <Link to="/auth/login" className="float-right btn btn-soft btn-primary w-45%">Login</Link>
+        
+            
+</div>
         </>
     )
 }
