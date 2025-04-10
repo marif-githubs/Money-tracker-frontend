@@ -3,6 +3,7 @@ import { Form } from '../components/Form.jsx'
 import { Loading } from '../components/Loading.jsx'
 import { useContext } from 'react'
 import { PageData } from '../store/function.jsx'
+import { Message } from '../components/Message.jsx'
 
 export const Assets = () => {
     const { assList, loading } = useContext(PageData);
@@ -16,7 +17,7 @@ export const Assets = () => {
 
                     <p className="p-4 pb-2 text-lg text-center tracking-wide">Assets</p>
 
-                    {loading ? <Loading /> : assList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"asset"}></List>)}
+                    {loading ? <Loading /> : assList === null ? <Message /> : assList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"asset"}></List>)}
 
                 </ul>
 

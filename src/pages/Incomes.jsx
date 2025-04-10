@@ -1,8 +1,9 @@
-import { List } from '../components/List.jsx'
-import { Form } from '../components/Form.jsx'
-import { Loading } from '../components/Loading.jsx'
+import { List } from '../components/List'
+import { Form } from '../components/Form'
+import { Loading } from '../components/Loading'
 import { useContext } from 'react'
-import { PageData } from '../store/function.jsx'
+import { PageData } from '../store/function'
+import { Message } from '../components/Message'
 
 export const Incomes = () => {
     const { incList, loading } = useContext(PageData);
@@ -14,9 +15,9 @@ export const Incomes = () => {
 
                 <ul className="list bg-base-100 ">
 
-                                        <p className="p-4 pb-2 text-lg text-center tracking-wide">Incomes</p>
+                    <p className="p-4 pb-2 text-lg text-center tracking-wide">Incomes</p>
 
-                    {loading ? <Loading /> : incList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"income"}></List>)}
+                    {loading ? <Loading /> : incList === null ? <Message /> : incList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"income"}></List>)}
 
                 </ul>
 
