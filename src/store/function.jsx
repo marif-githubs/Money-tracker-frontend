@@ -11,10 +11,10 @@ export const PageData = createContext({
 });
 
 const dataFunction = (state, action) => {
+    // add initial list issue
     let newexpList = [...state.expList];
     let newincList = [...state.incList];
     let newassList = [...state.assList];
-    // add initial list issue
     switch (action.type) {
         case "INITIAL_ITEMS":
             newexpList = action.payload.exp_entries
@@ -78,7 +78,6 @@ const PageDataProvider = ({ children }) => {
                 });
             })
             .catch(error => {
-                // console.error("Error fetching data:", error);
             })
             .finally(() => setLoading(false));
 

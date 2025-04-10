@@ -10,11 +10,11 @@ export const Assets = () => {
     return (<>
         <div className="flex flex-col-reverse md:flex-row" >
 
-            <div className='rounded-box shadow-md m-4 min-w-100 lg:w-120'>
+            <div className='rounded-box shadow-md m-4 md:min-w-100 lg:w-120'>
 
                 <ul className="list bg-base-100 ">
 
-                    <p className="p-4 pb-2 text-sm opacity-60 tracking-wide">Assets</p>
+                    <p className="p-4 pb-2 text-lg text-center tracking-wide">Assets</p>
 
                     {loading ? <Loading /> : assList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"asset"}></List>)}
 

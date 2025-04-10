@@ -2,7 +2,5 @@
 @plugin "daisyui";
 
 body {
-    @apply bg-cover bg-center;
-    background-image: url("https://i.pinimg.com/736x/f4/ac/6a/f4ac6aac3afb587f6cae04155656fca3.jpg");
-  }
-  
+    background-color:white;
+}

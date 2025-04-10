@@ -5,7 +5,6 @@ import { Expenditure } from "../pages/Expenditure";
 import { Incomes } from '../pages/Incomes';
 import { Assets } from "../pages/Assets";
 import { Dashboard } from "../pages/Dashboard";
-import { Authpage } from '../pages/Authpage';
 import { Register } from "../components/Register";
 import { Login } from '../components/Login';
 
@@ -14,14 +13,8 @@ export const router = createBrowserRouter([
         path: "/",
         element: <App />,
         children: [
-            {
-                path: "auth",
-                element: <Authpage />,
-                children: [
-                    { path: "login", element: <Login /> },
-                    { path: "register", element: <Register /> }
-                ]
-            },
+            { path: "auth/login", element: <Login /> },
+            { path: "auth/register", element: <Register /> },
             {
                 path: "home",
                 element: <Home />,
