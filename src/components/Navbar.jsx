@@ -1,4 +1,4 @@
-import "../App.css"
+jikjjjjimport "../App.css"
 
 export const Navbar = () => {
 
@@ -16,13 +16,13 @@ export const Navbar = () => {
         <div className="flex gap-2">
           {/* <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" /> */}
           {/* <div className="dropdown dropdown-end"> */}
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+         {/* <div tabIndex={0} role="button" className="btn btn-ghost b avatar">
             <div className="w-10 rounded-full border-4 border-double">
               <img
-                alt="Tailwind CSS Navbar component"
+                alt="Navbar"
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
-          </div>
+          </div>*/}
           <button className="btn btn-soft btn-primary" onClick={() => handleLogout()}> Log out</button>
 
           {/* <ul
