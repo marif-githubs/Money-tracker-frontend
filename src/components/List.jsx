@@ -18,7 +18,7 @@ export const List = ({ title, amount, description, id, type }) => {
                 <ul>
                     <li className="list-row flex pb-2" >
                         <div className='flex-grow md:min-w-50'>{title}</div>
-                        <div className='w-9'>{amount}</div>
+                        <div className=''>{amount}</div>
                         <TbXboxX className='w-10 h-5 opacity-60' onClick={() => handleDelete()} />
                     </li>
                 </ul>
