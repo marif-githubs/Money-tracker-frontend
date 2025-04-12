@@ -1,12 +1,60 @@
-# React + Vite
+# Money Tracker Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based frontend application for tracking financial data such as assets, expenditures, and incomes. The project is built using Vite for fast development and TailwindCSS for styling.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Assets Management**: Add, view, and manage your assets.
+- **Expenditure Tracking**: Track your expenses with detailed descriptions.
+- **Income Tracking**: Manage and view your income sources.
+- **Responsive Design**: Fully responsive layout using TailwindCSS and DaisyUI.
+- **Authentication**: Includes login and registration pages.
+- **Dynamic Routing**: Uses React Router for navigation between pages.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/ ├── components/ # Reusable UI components (e.g., Navbar, Footer, Form, etc.)
+├── pages/ # Page components for different routes (e.g., Assets, Expenditure, Home, etc.)
+├── routes/ # Application routes configuration
+├── store/ # Context and state management logic
+├── App.css # Global styles
+├── App.jsx # Main application component
+├── main.jsx # Application entry point
+
+# Technologies Used
+
+React: Frontend library for building user interfaces.
+Vite: Fast build tool for modern web projects.
+TailwindCSS: Utility-first CSS framework for styling.
+DaisyUI: TailwindCSS component library.
+React Router: For routing and navigation.
+Axios: For making HTTP requests.
+
+Folder Details
+Components
+
+# Reusable components like:
+
+Navbar
+Footer
+Form
+List
+Pages
+
+# Page components for routes:
+
+Assets: Displays and manages assets.
+Expenditure: Tracks expenses.
+Home: Main dashboard layout.
+
+# Routes
+
+Routing is configured in routes.jsx using createBrowserRouter.
+
+# Store
+
+State management is handled in function.jsx using React Context.
+
+# Styling
+
+The project uses TailwindCSS for styling and DaisyUI for pre-designed components. Global styles are defined in App.css.
