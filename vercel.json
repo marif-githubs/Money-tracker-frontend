@@ -1,10 +1,13 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
       "destination": "/auth/login",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
-
