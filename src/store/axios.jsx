@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create({
-    baseURL: "http://localhost:10000/",
+    baseURL: "https://money-tracker-backend-8trv.onrender.com/",
     headers: { "Content-Type": "application/json" },
 });
 
