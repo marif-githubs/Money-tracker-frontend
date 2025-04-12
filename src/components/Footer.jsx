@@ -6,12 +6,12 @@ export const Footer = () => {
         <div>
             <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-5">
                 <aside>
-                    
+
                     <p>
-                         Money tracker   
+                        <a href="" className='underline decoration-green-500'>Money tracker</a>
 
                         <br />
-                        An app helps you monitor expenses, set budgets, and manage finances effortlessly.
+                        An Application helps you Monitor Expenses, Set Budgets, Track Income and manage finances effortlessly.
                     </p>
                 </aside>
                 <nav>

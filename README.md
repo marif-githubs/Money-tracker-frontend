@@ -38,7 +38,7 @@ Components
 Navbar
 Footer
 Form
-List
+ListItem
 Pages
 
 # Page components for routes:

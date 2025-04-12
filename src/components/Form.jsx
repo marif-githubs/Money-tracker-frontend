@@ -38,7 +38,7 @@ export const Form = ({ type }) => {
                 <span>Description</span>
                 <textarea className="textarea" placeholder="Description" ref={description}></textarea>
             </label>
-            <button className="btn btn-active active:bg-green-300 btn-success text-white" onClick={() => handleSubmit()}>Add To List</button>
+            <button className="btn btn-active active:bg-green-300 btn-success text-white" onClick={() => handleSubmit()}>Add To ListItem</button>
         </div>
     )
 }

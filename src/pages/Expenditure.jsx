@@ -1,4 +1,4 @@
-import { List } from '../components/List.jsx'
+import { ListItem } from '../components/ListItem.jsx'
 import { Form } from '../components/Form.jsx'
 import { Loading } from '../components/Loading.jsx'
 import { useContext } from 'react'
@@ -17,7 +17,7 @@ export const Expenditure = () => {
 
                     <p className="p-4 pb-2 text-lg text-center tracking-wide">Expenditures</p>
 
-                    {loading ? <Loading /> : expList.length === 0 ? <Message/> : expList.map(item => <List title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"expense"}></List>)}
+                    {loading ? <Loading /> : expList.length === 0 ? <Message /> : expList.map(item => <ListItem title={item.title} amount={item.amount} description={item.description} id={item.t_id} type={"expense"}></ListItem>)}
 
                 </ul>
             </div>

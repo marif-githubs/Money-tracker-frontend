@@ -3,7 +3,7 @@ import '../App.css';
 import { TbXboxX } from "react-icons/tb";
 import { PageData } from '../store/function';
 
-export const List = ({ title, amount, description, id, type }) => {
+export const ListItem = ({ title, amount, description, id, type }) => {
 
     const { deleteItem } = useContext(PageData);
 

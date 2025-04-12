@@ -28,7 +28,8 @@ export const Login = () => {
     }
 
     return (<>
-        <div className="flex flex-col w-80 gap-3 m-auto my-20">
+        <div className="m-auto mt-15 text-center font-bold text-xl">Money tracker</div>
+        <div className="flex flex-col w-80 gap-3 m-auto my-1">
             <div className="text-center font-bold text-xl">Login</div>
             <div>{message}</div>
             <label className="input validator">

@@ -8,9 +8,9 @@ import { Footer } from "../components/Footer.jsx"
 export const Home = () => {
 
     return (
-        <div className="h-screen md:w-full lg:w-5/6 m-auto ">
+        <div className="md:w-full lg:w-5/6 m-auto ">
             <Navbar></Navbar>
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col h-screen md:flex-row">
                 <Sidedrawer></Sidedrawer>
                 <PageDataProvider>
                     <Outlet />
