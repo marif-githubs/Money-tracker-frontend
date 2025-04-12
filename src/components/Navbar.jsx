@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm px-8 bg-neutral text-neutral-content">
+      <div className="navbar bg-base-100 shadow-sm px-8">
         <div className="flex-1">
           <a className="select-none text-xl">Money Tracker</a>
         </div>
