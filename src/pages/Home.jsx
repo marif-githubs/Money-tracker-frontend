@@ -10,7 +10,7 @@ export const Home = () => {
     return (
         <div className="md:w-full lg:w-5/6 m-auto ">
             <Navbar></Navbar>
-            <div className="flex flex-col h-screen md:flex-row">
+            <div className="flex flex-col min-h-screen md:flex-row">
                 <Sidedrawer></Sidedrawer>
                 <PageDataProvider>
                     <Outlet />
