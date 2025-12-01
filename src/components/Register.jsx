@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import api from "../store/axios"
 import { useRef, useState } from "react"
 import axios from "axios";
+import { Loading } from "./Loading";
 
 export const Register = () => {
 
@@ -43,7 +44,6 @@ export const Register = () => {
     return (
         <>
             <div className="flex flex-col w-80 gap-3 m-auto my-20">
-                <div classname="m-auto mt-15 text-center font-bold text-xl">Money Tracker</div>
                 <div className="text-center font-bold text-xl">Register</div>
                 <div>{message}</div>
                 <label className="input validator">
