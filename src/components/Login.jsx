@@ -14,19 +14,24 @@ export const Login = () => {
     const handleLogin = async () => {
         console.log("Login clicked");
         setLoading(true);
+        if( username.current.value != " " && password.current.value != " " )
+        {
         const response = await api.post("userAuth/login", {
             username: username.current.value,
             password: password.current.value,
         });
         console.log("response");
-        setLoading(false);
         if (response.data.status === 'Success') {
             localStorage.setItem('jwt_token', response.data.token);
             window.location.href = "/home/dashboard";
         } else {
             setMessage(response.data.Message);
         }
-
+        } else {
+            setMessage("Enter Correct Cridentials");
+        }
+        setLoading(false);
+        
         username.current.value = "";
         password.current.value = "";
     }
@@ -35,7 +40,7 @@ export const Login = () => {
         {loading ? <div className="flex items-center justify-center h-screen">
             <span className="loading loading-ring loading-xl"></span>
         </div> : <div>
-            <div className="m-auto mt-15 text-center font-bold text-xl">Money tracker</div>
+            <div className="m-auto mt-15 text-center font-bold text-xl">Money Tracker</div>
             <div className="flex flex-col w-80 gap-3 m-auto my-1">
                 <div className="text-center font-bold text-xl">Login</div>
                 <div>{message}</div>
