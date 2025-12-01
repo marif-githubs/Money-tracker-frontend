@@ -14,6 +14,7 @@ export const Register = () => {
     const navigate = useNavigate();
 
     const handleSignup = async () => {
+       setLoading(true);
         try {
             const response = await api.post("userAuth/register", {
                 username: username.current.value,
@@ -30,7 +31,8 @@ export const Register = () => {
         } catch (err) {
             console.log(err);
         }
-
+        
+        setLoading(false);
         username.current.value = "";
         email.current.value = "";
         password.current.value = "";
@@ -41,6 +43,7 @@ export const Register = () => {
     return (
         <>
             <div className="flex flex-col w-80 gap-3 m-auto my-20">
+                <div classname="m-auto mt-15 text-center font-bold text-xl">Money Tracker</div>
                 <div className="text-center font-bold text-xl">Register</div>
                 <div>{message}</div>
                 <label className="input validator">
